@@ -16,19 +16,30 @@ Change into the newly created directory - the root directory:
 
 `$ cd gitea-spk`
 
-Download the Gitea binary matching your architecture from https://github.com/go-gitea/gitea/releases into the root directory. For example, a DiskStation with an ARMv7 CPU would require:
+Invoke the build script to have the most recent Gitea release downloaded and
+the install package created. The build script requires Python 2.7 (the current
+DiskStation default).
 
-`$ wget https://github.com/go-gitea/gitea/releases/download/v1.1.4/gitea-1.1.4-linux-arm-7`
+`$ ./create_spk.py`
 
-Invoke the build script to have the package created:
+The install package matching your DiskStation will be created in the root
+directory.
 
-`$ ./create_spk.sh`
+When building not directly on a DiskStation, you have to specify the package
+arch matching your DiskStation. If you don't know the matching package arch,
+login via ssh and display system information:
 
-The install package matching your binary (here `gitea-1.1.4-linux-arm-7.spk`) will be created in the root directory.
+`$ uname -a`
 
-If you have several binaries downloaded, you can specify the binary for which the package should be created:
+This will reveal the Synology model as well as the used architecture, e.g.
+"synology_braswell_ds716+".
 
-`$ ./create_spk.sh gitea-1.1.3-linux-arm-7`
+`$ ./create_spk.py -a braswell`
+
+You can also manually download Gitea binaries and specify the binary for which
+the package should be created:
+
+`$ ./create_spk.py gitea-1.1.3-linux-arm-7`
 
 ### Installation
 
