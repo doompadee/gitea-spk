@@ -1,8 +1,7 @@
 # Maps Gitea platforms to Synology arch values, see
 # https://developer.synology.com/developer-guide/appendix/index.html
 # https://github.com/SynologyOpenSource/pkgscripts-ng/blob/master/include/platforms
-386 x86
-amd64 cedarview bromolow denverton apollolake
+amd64 x86 bromolow cedarview evansport avoton braswell broadwell dockerx64 kvmx64 grantley apollolake denverton
 arm-5 88f6281 88f6282
-arm-7 armada370 armada375 armadaxp alpine/alpine4k comcerto2k
-arm64 rtd1296
+arm-7 armadaxp armada370 armada375 comcerto2k alpine alpine4k monaco
+arm64 hi3535 rtd1296 armada38x
